@@ -1,0 +1,56 @@
+# DevSecOps Pipeline
+name: Data Analysis Pipeline
+
+# Die Pipeline wird bei jedem Push auf den Main-Branch gestartet.
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+    # Kopiert den Code aus dem Repository    
+    - name: Checkout Code
+      uses: actions/checkout@v7
+
+    # Verwendung Python 3.12.3 
+    - name: Set up Python 3.12.3
+      uses: actions/setup-python@v6
+      with:
+        python-version: "3.12.3"
+
+    # Installiert die Bibliotheken aus der Requirements.txt.
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # Prüfung der Abhängigkeiten in der requirements.txt
+    - name: Check Dependencies 
+      run: |
+        pip install pip-audit 
+        pip-audit -r requirements.txt > audit.txt
+      continue-on-error: true 
+
+    # Statische Code-Analyse mit Bandit 
+    - name: Static Code Analysis 
+      run: |
+        pip install bandit
+        bandit -r analyse.py -f txt -o bandit.txt
+      continue-on-error: true 
+
+    #  Ausführung des Python-Codes
+    - name: Run NLP Analysis
+      run: |
+        python3 analyse.py
+
+    #  Dateien werden als Artefakt gespeichert und anschließend zum Download bereitgestellt
+    - name: Upload Results
+      uses: actions/upload-artifact@v7
+      with:
+        name: data-analysis-results
+        path: |
+           audit.txt
+           bandit.txt
+           ergebnis.txt
