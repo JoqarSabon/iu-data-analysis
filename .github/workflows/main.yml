@@ -43,7 +43,7 @@ jobs:
     #  Ausführung des Python-Codes
     - name: Run NLP Analysis
       run: |
-        python3 analyse.py
+        python3 analysis.py
 
     #  Dateien werden als Artefakt gespeichert und anschließend zum Download bereitgestellt
     - name: Upload Results
