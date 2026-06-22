@@ -1,0 +1,54 @@
+Python NLP Analyse - Studenten Beschwerden
+Ergebnis
+
+Top 10 Wörter mit Bag-of-Words (Häufige Wörter)
+student: 311.00
+university: 169.00
+feel: 135.00
+academic: 128.00
+limited: 127.00
+like: 123.00
+need: 118.00
+time: 116.00
+option: 114.00
+campus: 113.00
+
+Top 10 Wörter mit TF-IDF (Relevante Wörter)
+student: 44.61
+university: 29.32
+option: 26.86
+academic: 26.53
+limited: 26.15
+feel: 25.42
+need: 24.48
+opportunity: 24.17
+access: 24.00
+class: 23.63
+
+LSA mit Bag-of-Words
+Thema 1: student, university, feel, like, need
+Thema 2: student, university, opportunity, would, international
+Thema 3: access, limited, research, online, feel
+Thema 4: feel, like, really, sometimes, dont
+Thema 5: option, campus, available, wish, food
+
+LSA mit TF-IDF
+Thema 1: student, academic, limited, access, need
+Thema 2: student, option, university, offer, campus
+Thema 3: option, health, food, mental, cafeteria
+Thema 4: option, limited, access, offer, cafeteria
+Thema 5: online, class, made, time, professor
+
+LDA mit Bag-of-Words
+Thema 1: always, difficult, cafeteria, option, campus
+Thema 2: option, course, student, class, time
+Thema 3: access, limited, student, online, need
+Thema 4: academic, time, food, stress, work
+Thema 5: student, university, opportunity, feel, job
+
+LDA mit TF-IDF
+Thema 1: online, made, class, cafeteria, always
+Thema 2: option, academic, offer, limited, athletic
+Thema 3: access, financial, material, student, limited
+Thema 4: food, academic, stress, time, work
+Thema 5: student, opportunity, university, job, feel
