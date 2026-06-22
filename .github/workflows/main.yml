@@ -7,7 +7,7 @@ on:
     branches: ["main"]
 
 jobs:
-  execute:
+  pipeline:
     runs-on: ubuntu-latest
     steps:
     # Kopiert den Code aus dem Repository    
@@ -37,7 +37,7 @@ jobs:
     - name: Static Code Analysis 
       run: |
         pip install bandit
-        bandit -r analyse.py -f txt -o bandit.txt
+        bandit -r analysis.py -f txt -o bandit.txt
       continue-on-error: true 
 
     #  Ausführung des Python-Codes
