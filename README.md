@@ -25,7 +25,7 @@ Es wird ein offener Datensatz von Kaggle verwendet, der die Beschwerden simulier
 ## Projektstruktur
 
 ```bash
-├── analysis.py # Python Code für die Au
+├── analysis.py # Python Code für die Ausführung
 ├── complaints.csv # Beschwerde Testdaten
 ├── ergebnis.txt # Ausgabe aus der Analyse
 ├── .python-version  # Verwendete Python Version
